@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<style>
+	.pink {
+		background-color: pink;
+	}
+</style>
+
+<body>
+	<button onclick="alert('点击成功')">点击试试</button>
+
+	<!-- javascript: 表示后接js语句 -->
+	<a href="javascript:alert('点击超链接')"></a>
+	<a href="javascript:;"></a>
+	<button class="pink">按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+</body>
+
+
+<script>
+	let bts = document.querySelectorAll('button')
+	for (let i = 0; i < bts.length; i++) {
+		bts[i].addEventListener('click', function () {
+			document.querySelector('.pink').className = ''
+			this.className = 'pink'
+		})
+	}
+
+	/*
+	 * 输出方式
+	 */
+	// 弹出警告框
+	alert('Hello')
+	// 向页面输出内容 
+	document.write('JavaScript')
+	// 向控制台输出内容
+	console.log('Hello JavaScript')
+
+
+	/*
+	 * 输入方法
+	 */
+	let age = prompt('输入年龄')
+	
+	/*
+	 * 基本数据类型:Number、String、Boolean、undefined、null
+	 */
+
+	/*
+	 * 数据类型转换
+	 */
+	var str = '123'
+	var num = Number(str);
+	str = String(num);
+	var boo = Boolean(str);	// Number->Boolean,除了0和NaN，都是true;String->Boolean,除了空串，其余都是true；null和undefined为false,Object为true
+	// 特用于字符串类型转数值类型
+	num = parseInt(str);		// parseInt('1235j33') == 1235
+	num = parseInt(str, 8)	// 按照8进制转换
+	console.log(num)
+
+	console.log(undefined + 1)      // NaN
+        console.log(null + 1)   // 1
+
+
+	/*
+	 *模板字符串
+	 */
+	console.log(`我今年${age}岁`);  // 反引号
+
+	
+
+</script>
+
+</html>
