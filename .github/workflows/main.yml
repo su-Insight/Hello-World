@@ -1,0 +1,17 @@
+name: Print README on PR
+
+on:
+  pull_request:
+
+jobs:
+  print-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show README.md
+        run: |
+          echo "==== README.md Content Start ===="
+          cat README.md
+          echo "==== README.md Content End ===="
