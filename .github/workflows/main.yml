@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        with:
+          ref: hotfix  # 指定要 checkout 的分支
+          
       - name: Show README.md
         run: |
           echo "==== README.md Content Start ===="
